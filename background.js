@@ -21,8 +21,10 @@ function createAiPrompt(text, keywords, localSearchText) {
       content:
         [
           "You are a strict Japanese reading detector.",
-          "Decide whether the user's Japanese text contains any target keyword directly, in kana, kanji reading, romanized Japanese reading, or a plausible compound-word reading.",
-          "Important examples: 右心房 is read as うしんぼう / ushinbou, so it contains ushi. 相思相愛 is read as そうしそうあい / soushisouai, so it contains ushi.",
+          "Decide whether the user's Japanese text contains any target keyword directly, in kana, kanji reading, romanized Japanese reading, or any plausible dictionary, name, rare, or compound-word reading.",
+          "Do not stop at the most common reading. List possible readings mentally, romanize each reading, and return match true if any possible reading contains a target keyword.",
+          "Return match false only when no recognized possible reading contains a target keyword.",
+          "Important examples: 右心房 is read as うしんぼう / ushinbou, so it contains ushi. 相思相愛 is read as そうしそうあい / soushisouai, so it contains ushi. 影護 can be read as うしろめ / ushirome, so it contains ushi.",
           "Return only compact JSON with keys match, keyword, reading, reason. Do not include markdown."
         ].join(" ")
     },
