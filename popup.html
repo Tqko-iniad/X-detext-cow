@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>X Keyword Notifier</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="icons/icon-48.png" alt="" width="32" height="32">
+        <div>
+          <h1>X Keyword Notifier</h1>
+          <p>文字と読みを見守ります</p>
+        </div>
+      </header>
+
+      <label class="field">
+        <span>通知する文字列・ローマ字読み</span>
+        <textarea id="keywords" rows="3" maxlength="160" autocomplete="off"></textarea>
+        <small>例: ushi。改行またはカンマ区切りで複数指定できます</small>
+      </label>
+
+      <label class="toggle">
+        <input id="aiDetectionEnabled" type="checkbox">
+        <span>INIAD AI MOPでも検出</span>
+      </label>
+
+      <label class="field">
+        <span>INIAD API key</span>
+        <input id="iniadApiKey" type="password" autocomplete="off" placeholder="sk-...">
+        <small>AI検出をオンにした場合だけ、投稿欄の文章をINIAD AI MOPへ送信します</small>
+      </label>
+
+      <label class="field">
+        <span>AIモデル</span>
+        <select id="aiModel">
+          <option value="gpt-5.4-mini">gpt-5.4-mini</option>
+          <option value="gpt-5.4-nano">gpt-5.4-nano</option>
+          <option value="gpt-5.4">gpt-5.4</option>
+        </select>
+      </label>
+
+      <label class="toggle">
+        <input id="pageToast" type="checkbox">
+        <span>画面内トーストを表示</span>
+      </label>
+
+      <label class="toggle">
+        <input id="desktopNotifications" type="checkbox">
+        <span>ブラウザ通知を表示</span>
+      </label>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

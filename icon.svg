@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Ushi notifier icon">
+  <rect width="128" height="128" rx="26" fill="#111827"/>
+  <circle cx="64" cy="64" r="42" fill="#f9fafb"/>
+  <path d="M37 43c-9-14-20-15-24-7-4 9 4 20 19 22" fill="#f9fafb"/>
+  <path d="M91 43c9-14 20-15 24-7 4 9-4 20-19 22" fill="#f9fafb"/>
+  <circle cx="48" cy="56" r="7" fill="#111827"/>
+  <circle cx="80" cy="56" r="7" fill="#111827"/>
+  <ellipse cx="64" cy="79" rx="22" ry="14" fill="#f3d2c1"/>
+  <circle cx="56" cy="80" r="3" fill="#111827"/>
+  <circle cx="72" cy="80" r="3" fill="#111827"/>
+</svg>

@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "X Keyword Notifier",
+  "version": "1.0.0",
+  "description": "Xの投稿入力欄に指定した文字列やローマ字読みが含まれたら知らせます。初期値は「ushi」です。",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["notifications", "storage"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*",
+    "https://api.openai.iniad.org/*"
+  ],
+  "action": {
+    "default_title": "X Keyword Notifier",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["vendor/kuromoji.js", "vendor/wanakana.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dict/*.dat.gz"],
+      "matches": ["https://x.com/*", "https://twitter.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

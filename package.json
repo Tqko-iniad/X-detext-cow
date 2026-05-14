@@ -1,0 +1,15 @@
+{
+  "name": "x-keyword-notifier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser extension that notifies you when a configured keyword is typed into the X post composer.",
+  "scripts": {
+    "prepare-vendor": "mkdir -p vendor dict && cp node_modules/kuromoji/build/kuromoji.js vendor/kuromoji.js && cp node_modules/wanakana/wanakana.min.js vendor/wanakana.min.js && cp node_modules/kuromoji/dict/*.dat.gz dict/",
+    "check": "node scripts/check.js",
+    "package": "npm run prepare-vendor && npm run check && rm -rf dist && mkdir -p dist && zip -r dist/x-keyword-notifier.zip manifest.json background.js content.js popup.html popup.css popup.js vendor dict icons README.md LICENSE PRIVACY.md"
+  },
+  "dependencies": {
+    "kuromoji": "^0.1.2",
+    "wanakana": "^5.3.1"
+  }
+}
